@@ -1,0 +1,15 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        # time complexity: O(N)
+        # space complexity: O(N)
+        pre_map={}
+        for i,n in enumerate(nums):
+            diff = target - nums[i]
+            if diff in pre_map:
+                return [pre_map[diff],i]
+            pre_map[nums[i]] = i
